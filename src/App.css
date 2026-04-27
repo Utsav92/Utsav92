@@ -1,0 +1,50 @@
+.app {
+  min-height: 100vh;
+  background: #141414;
+  color: white;
+}
+
+.app__rows {
+  margin-top: -80px;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 40px;
+}
+
+.app__footer {
+  background: #141414;
+  padding: 40px 4%;
+  border-top: 1px solid #333;
+}
+
+.app__footer-inner {
+  max-width: 1000px;
+  color: #808080;
+  font-size: 13px;
+}
+
+.app__footer-inner > p {
+  margin-bottom: 20px;
+}
+
+.app__footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  margin-bottom: 20px;
+}
+
+.app__footer-links a {
+  color: #808080;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.app__footer-links a:hover {
+  color: #e5e5e5;
+}
+
+.app__footer-copy {
+  color: #4d4d4d;
+  font-size: 12px;
+}
