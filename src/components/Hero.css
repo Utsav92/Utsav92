@@ -1,193 +1,72 @@
 .hero {
-  position: relative;
-  height: 85vh;
-  min-height: 500px;
-  display: flex;
-  align-items: flex-end;
-  padding-bottom: 4%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: var(--spacing-60);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: calc(96px + var(--spacing-96)) var(--spacing-36) var(--spacing-96);
+  min-height: 90vh;
 }
 
-.hero__backdrop {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
-
-.hero__vignette {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    77deg,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.5) 40%,
-    transparent 65%
-  ),
-  linear-gradient(
-    to top,
-    rgba(20, 20, 20, 0.9) 0%,
-    transparent 30%
-  );
-}
-
-.hero__content {
-  position: relative;
-  z-index: 1;
-  max-width: 550px;
-  padding: 0 4%;
-}
-
-.hero__meta {
-  margin-bottom: 12px;
-}
-
-.hero__badge {
-  background: #E50914;
-  color: white;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  padding: 3px 8px;
-  border-radius: 2px;
+.hero__label {
+  display: block;
+  font-size: var(--text-nav-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  color: var(--color-saffron-spark);
+  margin-bottom: var(--spacing-24);
 }
 
 .hero__title {
-  color: white;
-  font-size: clamp(36px, 5vw, 72px);
-  font-weight: 700;
-  margin: 0 0 8px;
+  font-size: clamp(42px, 6vw, 78px);
+  font-weight: 400;
+  letter-spacing: -3.12px;
   line-height: 1.1;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  color: var(--color-bone-white);
+  margin-bottom: var(--spacing-30);
 }
 
-.hero__tagline {
-  color: #e5e5e5;
-  font-size: 18px;
-  margin: 0 0 12px;
-  font-style: italic;
-}
-
-.hero__overview {
-  color: #e5e5e5;
-  font-size: 15px;
+.hero__body {
+  max-width: 480px;
+  font-size: var(--text-body);
+  font-weight: 200;
   line-height: 1.5;
-  margin: 0 0 16px;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  color: var(--color-bone-white);
+  margin-bottom: var(--spacing-36);
 }
 
-.hero__rating {
-  display: flex;
+.hero__cta {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  color: #e5e5e5;
-  font-size: 14px;
-}
-
-.hero__stars {
-  color: #f5c518;
-  letter-spacing: 2px;
-}
-
-.hero__score {
+  background: var(--color-electric-iris);
+  color: var(--color-bone-white);
+  font-size: var(--text-nav-label);
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  padding: 14.4px 16px;
+  border-radius: var(--radius-buttons);
+  transition: opacity 0.2s;
 }
 
-.hero__dot {
-  opacity: 0.5;
+.hero__cta:hover {
+  opacity: 0.88;
 }
 
-.hero__buttons {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
+.hero__visual {
+  height: 560px;
 }
 
-.hero__btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 28px;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: opacity 0.2s, background 0.2s;
-}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: calc(72px + var(--spacing-60));
+  }
 
-.hero__btn--play {
-  background: white;
-  color: black;
-}
-
-.hero__btn--play:hover {
-  background: rgba(255, 255, 255, 0.75);
-}
-
-.hero__btn--info {
-  background: rgba(109, 109, 110, 0.7);
-  color: white;
-}
-
-.hero__btn--info:hover {
-  background: rgba(109, 109, 110, 0.5);
-}
-
-.hero__genres {
-  color: #e5e5e5;
-  font-size: 14px;
-  display: flex;
-  gap: 8px;
-}
-
-.hero__genre-sep {
-  margin-right: 8px;
-  opacity: 0.5;
-}
-
-/* Trailer overlay */
-.hero__trailer-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__trailer-box {
-  background: #181818;
-  border-radius: 8px;
-  width: min(600px, 90vw);
-  aspect-ratio: 16/9;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__trailer-close {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.hero__trailer-placeholder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  color: #aaa;
+  .hero__visual {
+    height: 380px;
+    order: -1;
+  }
 }

@@ -1,16 +1,15 @@
-# React + Vite
+# Dala
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page for Dala — "Your workplace has the answer. Just ask Dala for it."
 
-Currently, two official plugins are available:
+Built with React + Vite, following the Dala dark/violet style reference: a single
+Electric Iris (#8052ff) accent on a pure black canvas, oversized weight-400
+headlines, ultra-light body copy, and an animated triangle-particle
+constellation as the signature visual.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Development
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
