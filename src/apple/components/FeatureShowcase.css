@@ -1,0 +1,48 @@
+.apple-feature {
+  background: var(--color-canvas);
+  padding: var(--spacing-80) var(--spacing-24);
+}
+
+.apple-feature__nuevo {
+  display: block;
+  font-size: var(--text-caption);
+  font-weight: 500;
+  color: var(--color-ember);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+}
+
+.apple-feature__heading {
+  font-size: var(--text-body-lg);
+  font-weight: 600;
+  letter-spacing: 0.007em;
+  color: var(--color-primary-ink);
+  max-width: var(--page-max-width);
+  margin: var(--spacing-8) auto 0;
+}
+
+.apple-feature__card {
+  max-width: var(--page-max-width);
+  margin: var(--spacing-40) auto 0;
+  background: var(--color-paper);
+  border-radius: var(--radius-cards);
+  padding: var(--spacing-40);
+}
+
+.apple-feature__card-title {
+  font-size: var(--text-heading-sm);
+  font-weight: 600;
+  color: var(--color-primary-ink);
+}
+
+.apple-feature__card-body {
+  font-size: var(--text-body-sm);
+  color: var(--color-mid-gray);
+  max-width: 640px;
+  margin-top: var(--spacing-16);
+  line-height: 1.47;
+}
+
+.apple-feature__card-body + .apple-arrow-link {
+  margin-top: var(--spacing-24);
+}

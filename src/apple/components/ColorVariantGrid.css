@@ -1,0 +1,37 @@
+.apple-variants {
+  background: var(--color-paper);
+  padding: var(--spacing-80) var(--spacing-24);
+}
+
+.apple-variants__heading {
+  font-size: var(--text-body-lg);
+  font-weight: 600;
+  letter-spacing: 0.007em;
+  color: var(--color-primary-ink);
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.apple-variants__grid {
+  display: flex;
+  gap: var(--spacing-20);
+  max-width: var(--page-max-width);
+  margin: var(--spacing-40) auto 0;
+}
+
+.apple-variants__card {
+  flex: 1;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-cards);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apple-variants__device {
+  width: 55%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-links);
+  background: rgba(29, 29, 31, 0.85);
+}

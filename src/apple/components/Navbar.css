@@ -1,0 +1,60 @@
+.apple-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-32);
+  height: 44px;
+  padding: 0 var(--spacing-24);
+  background: transparent;
+  backdrop-filter: blur(20px);
+  transition: background-color 0.2s ease;
+}
+
+.apple-navbar--scrolled {
+  background: var(--color-faded-surface);
+}
+
+.apple-navbar__mark {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary-ink);
+}
+
+.apple-navbar__links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-20);
+  margin: 0;
+  padding: 0;
+}
+
+.apple-navbar__link {
+  font-size: var(--text-micro);
+  color: var(--color-primary-ink);
+}
+
+.apple-navbar__icons {
+  display: flex;
+  gap: var(--spacing-16);
+  position: absolute;
+  right: var(--spacing-24);
+}
+
+.apple-navbar__icon {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid var(--color-primary-ink);
+  display: inline-block;
+}
+
+.apple-navbar__icon--search {
+  border-radius: 50%;
+}
+
+.apple-navbar__icon--bag {
+  border-radius: 3px 3px 5px 5px;
+}

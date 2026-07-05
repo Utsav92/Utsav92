@@ -1,0 +1,49 @@
+.apple-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--spacing-40) var(--spacing-24) 0;
+  background: var(--color-paper);
+}
+
+.apple-hero__eyebrow {
+  font-size: var(--text-body-sm);
+  color: var(--color-primary-ink);
+}
+
+.apple-hero__title {
+  font-size: clamp(48px, 9vw, var(--text-display));
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -1.44px;
+  color: var(--color-primary-ink);
+  margin-top: var(--spacing-8);
+}
+
+.apple-hero__actions {
+  display: flex;
+  gap: var(--spacing-16);
+  margin-top: var(--spacing-24);
+}
+
+.apple-hero__price {
+  font-size: var(--text-body-sm);
+  color: var(--color-mid-gray);
+  margin-top: var(--spacing-16);
+}
+
+.apple-hero__visual {
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin-top: var(--spacing-40);
+  display: flex;
+  justify-content: center;
+}
+
+.apple-hero__device {
+  width: min(70vw, 720px);
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-cards);
+  background: linear-gradient(184deg, #1d1d1f 20%, #3a6bd6 76%, #252525 95%);
+}

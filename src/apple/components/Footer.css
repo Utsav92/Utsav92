@@ -1,0 +1,19 @@
+.apple-footer {
+  background: var(--color-canvas);
+  padding: var(--spacing-40) var(--spacing-24);
+}
+
+.apple-footer__legal {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  font-size: var(--text-micro);
+  color: var(--color-mid-gray);
+  line-height: 1.33;
+}
+
+.apple-footer__copyright {
+  max-width: var(--page-max-width);
+  margin: var(--spacing-16) auto 0;
+  font-size: var(--text-micro);
+  color: var(--color-mid-gray);
+}

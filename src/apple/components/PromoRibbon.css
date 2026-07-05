@@ -1,0 +1,11 @@
+.promo-ribbon {
+  text-align: center;
+  padding: var(--spacing-8) var(--spacing-16);
+  font-size: var(--text-caption);
+  color: var(--color-primary-ink);
+  background: var(--color-paper);
+}
+
+.promo-ribbon a {
+  color: var(--color-link-blue);
+}
