@@ -1,0 +1,99 @@
+.team {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: var(--spacing-96) var(--spacing-36);
+}
+
+.team__header {
+  margin-bottom: var(--spacing-60);
+}
+
+.team__label {
+  display: block;
+  font-size: var(--text-nav-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+  color: var(--color-saffron-spark);
+  margin-bottom: var(--spacing-24);
+}
+
+.team__title {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 400;
+  letter-spacing: -1.68px;
+  color: var(--color-bone-white);
+  max-width: 640px;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-36);
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.team-card__portrait {
+  aspect-ratio: 4 / 5;
+  border-radius: 24px;
+  background: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-card__portrait span {
+  font-size: 42px;
+  font-weight: 400;
+  color: var(--color-electric-iris);
+  letter-spacing: -1px;
+}
+
+.team-card__role {
+  font-size: var(--text-caption);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--color-electric-iris);
+  letter-spacing: 0.35px;
+}
+
+.team-card__name {
+  font-size: var(--text-heading-xs);
+  font-weight: 400;
+  color: var(--color-bone-white);
+}
+
+.team__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-12);
+  margin-top: var(--spacing-60);
+}
+
+.team__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-ash-gray);
+  opacity: 0.4;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.team__dot--active {
+  background: var(--color-electric-iris);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+}
