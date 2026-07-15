@@ -1,14 +1,14 @@
-.team {
+.preset-grid {
   max-width: var(--page-max-width);
   margin: 0 auto;
   padding: var(--spacing-96) var(--spacing-36);
 }
 
-.team__header {
+.preset-grid__header {
   margin-bottom: var(--spacing-60);
 }
 
-.team__label {
+.preset-grid__label {
   display: block;
   font-size: var(--text-nav-label);
   font-weight: 600;
@@ -18,7 +18,7 @@
   margin-bottom: var(--spacing-24);
 }
 
-.team__title {
+.preset-grid__title {
   font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 400;
   letter-spacing: -1.68px;
@@ -26,35 +26,42 @@
   max-width: 640px;
 }
 
-.team__grid {
+.preset-grid__cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--spacing-36);
 }
 
-.team-card {
+.preset-card {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-12);
 }
 
-.team-card__portrait {
+.preset-card__thumb {
+  position: relative;
   aspect-ratio: 4 / 5;
   border-radius: 24px;
-  background: #141414;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+}
+
+.preset-card__play {
+  position: absolute;
+  bottom: var(--spacing-18);
+  right: var(--spacing-18);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--color-bone-white);
+  font-size: 12px;
+  padding-left: 3px;
 }
 
-.team-card__portrait span {
-  font-size: 42px;
-  font-weight: 400;
-  color: var(--color-electric-iris);
-  letter-spacing: -1px;
-}
-
-.team-card__role {
+.preset-card__tag {
   font-size: var(--text-caption);
   font-weight: 400;
   text-transform: uppercase;
@@ -62,20 +69,27 @@
   letter-spacing: 0.35px;
 }
 
-.team-card__name {
+.preset-card__name {
   font-size: var(--text-heading-xs);
   font-weight: 400;
   color: var(--color-bone-white);
 }
 
-.team__dots {
+.preset-card__description {
+  font-size: var(--text-nav-label);
+  font-weight: 200;
+  line-height: 1.5;
+  color: var(--color-silver-mist);
+}
+
+.preset-grid__dots {
   display: flex;
   justify-content: center;
   gap: var(--spacing-12);
   margin-top: var(--spacing-60);
 }
 
-.team__dot {
+.preset-grid__dot {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
@@ -87,13 +101,13 @@
   transition: opacity 0.2s, background 0.2s;
 }
 
-.team__dot--active {
+.preset-grid__dot--active {
   background: var(--color-electric-iris);
   opacity: 1;
 }
 
 @media (max-width: 900px) {
-  .team__grid {
+  .preset-grid__cards {
     grid-template-columns: 1fr;
   }
 }

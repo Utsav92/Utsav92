@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import "./Navbar.css";
 
 const NAV_LINKS = [
-  { label: "Manifesto", href: "#manifesto" },
-  { label: "Team", href: "#team" },
-  { label: "Blog", href: "#blog" },
+  { label: "Effects", href: "#effects" },
+  { label: "Presets", href: "#presets" },
+  { label: "Apps", href: "#apps" },
 ];
 
 export default function Navbar() {
@@ -20,7 +20,7 @@ export default function Navbar() {
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <a className="navbar__brand" href="#top">
         <img className="navbar__mark" src="/favicon.svg" alt="" />
-        <span className="navbar__wordmark">Dala</span>
+        <span className="navbar__wordmark">Higgsfield</span>
       </a>
 
       <ul className="navbar__links">
@@ -33,8 +33,8 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <a className="navbar__cta" href="#request-access">
-        Request Access
+      <a className="navbar__cta" href="#start-creating">
+        Try for Free
       </a>
     </nav>
   );

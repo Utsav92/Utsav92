@@ -59,7 +59,7 @@
 .navbar__cta {
   display: inline-flex;
   align-items: center;
-  background: var(--color-electric-iris);
+  background: var(--gradient-viral);
   color: var(--color-bone-white);
   font-size: var(--text-nav-label);
   font-weight: 600;

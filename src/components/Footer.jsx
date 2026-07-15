@@ -2,20 +2,33 @@ import "./Footer.css";
 
 export default function Footer() {
   return (
-    <footer id="request-access" className="footer">
-      <h2 className="footer__title">Ask your workplace anything.</h2>
+    <footer id="apps" className="footer">
+      <h2 className="footer__title">Ready to make your next video go viral?</h2>
       <p className="footer__body">
-        Join the teams already replacing the search bar with a question.
+        Join the creators and marketers already generating cinematic AI video with
+        Higgsfield's presets, apps, and skills.
       </p>
-      <a className="footer__cta" href="mailto:hello@dala.ai">
-        Request Access
+      <a id="start-creating" className="footer__cta" href="#top">
+        Start Creating Free
       </a>
       <div className="footer__bottom">
-        <span>Dala</span>
+        <span>Higgsfield</span>
         <div className="footer__links">
-          <a href="#manifesto">Manifesto</a>
-          <a href="#team">Team</a>
-          <a href="#blog">Blog</a>
+          <a href="#effects">Effects</a>
+          <a href="#presets">Presets</a>
+          <a href="#top">Pricing</a>
+        </div>
+        <div className="footer__social">
+          <a href="#top" aria-label="X">
+            <svg width="16" height="16" viewBox="0 0 19 19" fill="currentColor">
+              <path fillRule="evenodd" d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z" clipRule="evenodd" />
+            </svg>
+          </a>
+          <a href="#top" aria-label="Discord">
+            <svg width="18" height="17" viewBox="0 0 20 19" fill="currentColor">
+              <path d="M16.224 3.768a14.5 14.5 0 0 0-3.67-1.153c-.158.286-.343.67-.47.976a13.5 13.5 0 0 0-4.067 0c-.128-.306-.317-.69-.476-.976A14.4 14.4 0 0 0 3.868 3.77C1.546 7.28.916 10.703 1.231 14.077a14.7 14.7 0 0 0 4.5 2.306q.545-.748.965-1.587a9.5 9.5 0 0 1-1.518-.74q.191-.14.372-.293c2.927 1.369 6.107 1.369 8.999 0q.183.152.372.294-.723.437-1.52.74.418.838.963 1.588a14.6 14.6 0 0 0 4.504-2.308c.37-3.911-.63-7.302-2.644-10.309m-9.13 8.234c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.894 0 1.614.82 1.599 1.82.001 1-.705 1.82-1.6 1.82m5.91 0c-.878 0-1.599-.82-1.599-1.82 0-.998.705-1.82 1.6-1.82.893 0 1.614.82 1.599 1.82 0 1-.706 1.82-1.6 1.82" />
+            </svg>
+          </a>
         </div>
       </div>
     </footer>

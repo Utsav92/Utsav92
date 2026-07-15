@@ -1,11 +1,12 @@
-# Dala
+# Higgsfield
 
-Landing page for Dala — "Your workplace has the answer. Just ask Dala for it."
+Landing page clone for Higgsfield — "Turn any photo into a scroll-stopping AI
+video."
 
-Built with React + Vite, following the Dala dark/violet style reference: a single
-Electric Iris (#8052ff) accent on a pure black canvas, oversized weight-400
-headlines, ultra-light body copy, and an animated triangle-particle
-constellation as the signature visual.
+Built with React + Vite: a black canvas, a violet-to-orange viral gradient
+accent, and a floating grid of gradient "preset" tiles standing in for
+Higgsfield's cinematic camera presets and trending effects (Mermaid, Liquid
+Metal, Face Punch, Bald Swipe, and more).
 
 ## Development
 
