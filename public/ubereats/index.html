@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Food delivery from restaurants and stores near you." />
+<title>Uber Eats-style Landing Page</title>
+<style>
+  :root{
+    --green:#06c167; --green-d:#05a357; --black:#000; --ink:#1f1f1f;
+    --grey:#f6f6f6; --line:#e6e6e6; --muted:#5e5e5e; --cream:#fff6e5;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 15px/1 inherit;font-family:inherit;padding:14px 22px;border-radius:999px;background:var(--black);color:#fff;transition:.15s}
+  .btn:hover{background:#333}
+  .btn.light{background:#fff;color:#000}.btn.light:hover{background:#eee}
+  .btn.grey{background:var(--grey);color:#000}.btn.grey:hover{background:#e8e8e8}
+  .btn.green{background:var(--green);color:#000}.btn.green:hover{background:var(--green-d)}
+
+  /* header */
+  header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;gap:16px;height:68px}
+  .logo{font-size:24px;font-weight:700;letter-spacing:-.5px}
+  .logo b{color:var(--green)}
+  .nav .spacer{flex:1}
+  .loc{display:none;align-items:center;gap:6px;font-weight:600;font-size:14px;background:var(--grey);padding:10px 14px;border-radius:999px}
+  .nav .btn{padding:10px 18px;font-size:14px}
+  @media(min-width:760px){.loc{display:flex}}
+
+  /* hero */
+  .hero{background:var(--cream);overflow:hidden}
+  .hero .wrap{display:grid;gap:40px;padding-top:56px;padding-bottom:64px;align-items:center}
+  @media(min-width:900px){.hero .wrap{grid-template-columns:1.1fr .9fr;padding-top:80px;padding-bottom:88px}}
+  h1{font-size:clamp(38px,6vw,64px);line-height:1.05;letter-spacing:-1.5px;font-weight:700}
+  .hero p.sub{margin-top:16px;color:var(--muted);font-size:18px;max-width:480px}
+  .search{margin-top:28px;display:flex;flex-direction:column;gap:10px;max-width:560px}
+  .field{display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:0 16px;height:56px;border:2px solid transparent}
+  .field:focus-within{border-color:#000}
+  .field input{flex:1;border:0;outline:0;font:500 16px inherit;font-family:inherit;background:transparent;height:100%}
+  @media(min-width:560px){.search{flex-direction:row}.search .field{flex:1}}
+  .search .btn{height:56px;border-radius:10px}
+  .signin{margin-top:16px;font-size:14px;color:var(--muted)}
+  .signin a{color:#000;text-decoration:underline;font-weight:600}
+  .collage{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .collage div{aspect-ratio:1;border-radius:20px;display:grid;place-items:center;font-size:clamp(40px,7vw,72px);box-shadow:0 8px 24px rgba(0,0,0,.08)}
+  .collage div:nth-child(1){background:#ffd9a0}.collage div:nth-child(2){background:#c8f0d8;transform:translateY(22px)}
+  .collage div:nth-child(3){background:#ffc7c2}.collage div:nth-child(4){background:#d7d4ff;transform:translateY(-12px)}
+  .collage div:nth-child(5){background:#fff;}.collage div:nth-child(6){background:#ffe58a;transform:translateY(18px)}
+
+  /* sections */
+  section{padding:64px 0}
+  h2{font-size:clamp(28px,4vw,38px);letter-spacing:-.8px;line-height:1.15;margin-bottom:28px}
+  .cats{display:flex;gap:18px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+  .cats::-webkit-scrollbar{display:none}
+  .cat{flex:0 0 auto;text-align:center;font-weight:600;font-size:14px;cursor:pointer}
+  .cat span{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--grey);font-size:38px;margin-bottom:8px;transition:.15s}
+  .cat:hover span{background:#e8e8e8;transform:translateY(-3px)}
+  .cards{display:grid;gap:22px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .card{border-radius:14px;overflow:hidden;cursor:pointer}
+  .card .img{height:160px;display:grid;place-items:center;font-size:64px;border-radius:14px;position:relative}
+  .card .promo{position:absolute;left:10px;top:10px;background:var(--green);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;color:#000}
+  .card h3{margin-top:10px;font-size:16px;display:flex;justify-content:space-between;gap:8px}
+  .card .rate{background:var(--grey);border-radius:999px;font-size:12px;padding:2px 9px;height:fit-content;font-weight:600}
+  .card p{color:var(--muted);font-size:14px}
+  .card:hover .img{filter:brightness(.95)}
+
+  .steps{background:var(--grey)}
+  .stepgrid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .step{background:#fff;border-radius:18px;padding:28px}
+  .step .n{font-size:44px}
+  .step h3{margin:12px 0 6px;font-size:20px}
+  .step p{color:var(--muted)}
+
+  .split{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .panel{border-radius:20px;padding:36px;min-height:320px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+  .panel h3{font-size:28px;letter-spacing:-.5px;line-height:1.15}
+  .panel p{margin-top:10px;max-width:380px;opacity:.85}
+  .panel .emoji{font-size:64px}
+  .p1{background:#000;color:#fff}.p2{background:var(--green);color:#000}
+
+  .faq details{border-bottom:1px solid var(--line);padding:18px 0}
+  .faq summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between}
+  .faq summary::after{content:"+";font-size:24px;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq p{margin-top:10px;color:var(--muted);max-width:720px}
+
+  .cta{background:#000;color:#fff;text-align:center;padding:80px 0}
+  .cta h2{margin-bottom:20px}
+
+  footer{background:#000;color:#fff;border-top:1px solid #222;padding:48px 0 32px}
+  .cols{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+  footer h4{font-size:14px;margin-bottom:12px;color:#fff}
+  footer li{list-style:none;margin-bottom:8px;font-size:14px;color:#aaa}
+  footer li:hover{color:#fff}
+  .legal{margin-top:36px;font-size:12px;color:#777;border-top:1px solid #222;padding-top:20px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Uber <b>Eats</b></a>
+    <span class="spacer"></span>
+    <div class="loc">📍 Deliver now · Add address</div>
+    <a href="#" class="btn grey">Log in</a>
+    <a href="#" class="btn">Sign up</a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Order delivery near you</h1>
+        <p class="sub">Restaurants, groceries and more — delivered to your door in minutes.</p>
+        <form class="search" onsubmit="event.preventDefault();document.getElementById('go').textContent='Searching…';setTimeout(()=>document.getElementById('go').textContent='Search here',1200)">
+          <label class="field">📍 <input type="text" placeholder="Enter delivery address" aria-label="Delivery address" /></label>
+          <button class="btn" id="go" type="submit">Search here</button>
+        </form>
+        <p class="signin"><a href="#">Log in</a> for your recent addresses</p>
+      </div>
+      <div class="collage" aria-hidden="true">
+        <div>🍔</div><div>🥗</div><div>🍕</div><div>🍣</div><div>🧋</div><div>🌮</div>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>What are you craving?</h2>
+      <div class="cats">
+        <div class="cat"><span>🍔</span>Burgers</div>
+        <div class="cat"><span>🍕</span>Pizza</div>
+        <div class="cat"><span>🍣</span>Sushi</div>
+        <div class="cat"><span>🌮</span>Mexican</div>
+        <div class="cat"><span>🍜</span>Noodles</div>
+        <div class="cat"><span>🥗</span>Healthy</div>
+        <div class="cat"><span>🍛</span>Indian</div>
+        <div class="cat"><span>🍰</span>Dessert</div>
+        <div class="cat"><span>☕</span>Coffee</div>
+        <div class="cat"><span>🛒</span>Grocery</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>Popular near you</h2>
+      <div class="cards">
+        <article class="card"><div class="img" style="background:#ffd9a0"><span class="promo">Buy 1, Get 1 Free</span>🍔</div><h3>Smash Burger Co. <span class="rate">4.7</span></h3><p>15–25 min · $0.99 delivery fee</p></article>
+        <article class="card"><div class="img" style="background:#ffc7c2"><span class="promo">20% off</span>🍕</div><h3>Napoli Wood Fire <span class="rate">4.8</span></h3><p>20–30 min · $1.49 delivery fee</p></article>
+        <article class="card"><div class="img" style="background:#c8f0d8">🍣</div><h3>Sakura Sushi Bar <span class="rate">4.6</span></h3><p>25–35 min · $0.49 delivery fee</p></article>
+        <article class="card"><div class="img" style="background:#d7d4ff"><span class="promo">Free delivery</span>🍜</div><h3>Noodle House <span class="rate">4.5</span></h3><p>10–20 min · $0 delivery fee</p></article>
+        <article class="card"><div class="img" style="background:#ffe58a">🌮</div><h3>Casa Taco <span class="rate">4.7</span></h3><p>15–25 min · $1.99 delivery fee</p></article>
+        <article class="card"><div class="img" style="background:#cfe9ff">🥗</div><h3>Green Bowl <span class="rate">4.9</span></h3><p>20–30 min · $0.99 delivery fee</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="stepgrid">
+        <div class="step"><div class="n">📍</div><h3>Set your address</h3><p>Tell us where you are to see what's available nearby.</p></div>
+        <div class="step"><div class="n">🍽️</div><h3>Pick your favorites</h3><p>Browse menus from local restaurants and stores.</p></div>
+        <div class="step"><div class="n">🛵</div><h3>Track your order</h3><p>Follow your courier in real time until it arrives.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap split">
+      <div class="panel p1">
+        <div><h3>Do more with your account</h3><p>Get exclusive offers, save your favorite spots, and reorder in a tap.</p></div>
+        <div><a href="#" class="btn light">Create an account</a></div>
+      </div>
+      <div class="panel p2">
+        <div><h3>Your restaurant, delivered</h3><p>Reach new customers and grow your business as a partner.</p></div>
+        <div><a href="#" class="btn">Add your restaurant</a></div>
+      </div>
+      <div class="panel" style="background:var(--cream)">
+        <div><h3>Deliver with flexibility</h3><p>Earn money on your own schedule as a courier partner.</p></div>
+        <div><a href="#" class="btn">Start earning</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" style="padding-top:0">
+    <div class="wrap">
+      <h2>Frequently asked questions</h2>
+      <details><summary>How fast is delivery?</summary><p>Most orders arrive in 15–35 minutes depending on distance and demand.</p></details>
+      <details><summary>How much does delivery cost?</summary><p>Fees vary by restaurant and location. Members enjoy reduced or free delivery on eligible orders.</p></details>
+      <details><summary>Can I schedule an order ahead?</summary><p>Yes — choose a delivery time at checkout up to several days in advance.</p></details>
+      <details><summary>What if something is wrong with my order?</summary><p>Contact support from the order screen and we'll make it right.</p></details>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="wrap">
+      <h2>Hungry? Let's fix that.</h2>
+      <a href="#" class="btn green">Order now</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><a href="#" class="logo">Uber <b>Eats</b></a></div>
+      <div><h4>Company</h4><ul><li>About us</li><li>Careers</li><li>Blog</li></ul></div>
+      <div><h4>Products</h4><ul><li>Delivery</li><li>Pickup</li><li>Gift cards</li></ul></div>
+      <div><h4>Partners</h4><ul><li>Add your restaurant</li><li>Become a courier</li></ul></div>
+      <div><h4>Help</h4><ul><li>Support</li><li>Safety</li><li>Accessibility</li></ul></div>
+    </div>
+    <p class="legal">Demo landing page for design practice. Not affiliated with Uber Technologies, Inc.</p>
+  </div>
+</footer>
+
+</body>
+</html>
